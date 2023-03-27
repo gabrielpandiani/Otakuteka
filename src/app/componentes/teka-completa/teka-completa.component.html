@@ -1,0 +1,41 @@
+<app-nav></app-nav>
+
+<section class="teka-completa" *ngIf="!detalleTeka" >
+    <div *ngFor="let anime of animeList$ |async " class="card cardContainer" >
+        <div class="imagen-card">
+            <img id="imagen-card" src="{{anime.imagen}}" alt="{{anime.nombreAnime}}">
+        </div>
+        <div class="texto-card" name="texto-card">
+                <h1 class="titulo-card">{{anime.nombreAnime}}</h1>
+                <h2 class="genero-card">{{anime.genero}}</h2>
+                <p class="puntaje-card">
+                  <i class="fas fa-star"></i>{{anime.promedioPuntaje | number:'1.1-2'}}
+                </p>
+                <p class="sinopsis-card">{{anime.sinopsis | slice:0:maxChars}}
+                    <span *ngIf="anime.sinopsis.length>maxChars">...</span>
+                </p>
+                <app-anime (mostrarDetalle)="generarDetalle(anime.idAnime)" ></app-anime>
+        </div>
+    </div>
+
+</section>
+<section class="teka-completa" *ngIf="detalleTeka">
+    <div id="detalle" >
+        <div id="boton-volver">
+            <button type="button" id="volverTeka" (click)="cambiarDetalleTeka()"><img src="assets/Imagenes_Otakuteka/left.svg"><a>Volver a la Teka</a></button>
+        </div>
+        <div id="contenedorOculto" *ngIf="animeElegido">
+            <div id="imagenDetalle">
+                <img class="animeImagen" src="{{ animeElegido.imagen }}" id="{{ animeElegido.idAnime}}">
+            </div>
+            <div id="descripcion">
+                <h2 id="tituloAnime">{{ animeElegido.nombreAnime}}</h2>
+                <h3>Temporada: <span>{{animeElegido.temporada_emision}} </span></h3>
+                <h3>Genero: <span>{{ animeElegido.genero}}</span></h3>
+                <app-valoracion></app-valoracion>
+                <p><i class="fas fa-star"></i>{{animeElegido.promedioPuntaje| number:'1.1-2'}}</p>
+                <p>{{ animeElegido.sinopsis }}</p>
+            </div>
+        </div>
+    </div>
+</section>

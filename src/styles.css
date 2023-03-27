@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,800&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    --colorNaranja: #f15412;
+    --colorBlanco: #EEE;
+    --colorCeleste:#34b3f1;
+    --bg: #e3e4e8;
+	  --fg: #17181c;
+	  --input: #ffffff;
+	  --primary: #f15412;
+	  --dur: 1s;
+    --color-inactivo: #5f5050;
+    --color-hover: #ffa400;
+}
+
+body{
+    margin: 0;
+}

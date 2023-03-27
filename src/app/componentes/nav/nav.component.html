@@ -1,0 +1,22 @@
+<header>
+    <nav class="nav">
+        <div>
+            <h1>Otakuteka</h1>
+            <h2 id="usuario">{{nombreUsuario}}</h2>
+            <img src="assets/Imagenes_Otakuteka/reno.png">
+
+        </div>
+
+        <form *ngIf="ruta">
+          <input id= "busqueda" type="text" placeholder="Busca tu anime aqui..." (keyup)="buscaPorTecla($event)" >
+          <span class="caret"></span>
+        </form>
+
+        <ul>
+            <li><a routerLink="/">Inicio</a></li>
+            <li><a routerLink="/teka-completa">Teka Completa</a></li>
+            <li *ngIf="!mostrar"><a routerLink="/login">Login</a></li>
+            <li class="cerrarSesion" *ngIf="mostrar" (click)="cerrarSesion()"><u> Cerrar Sesion</u> </li>
+        </ul>
+    </nav>
+</header>

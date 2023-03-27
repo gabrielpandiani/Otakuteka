@@ -1,0 +1,42 @@
+.valoracion {
+  display: flex;
+  flex-direction: row;
+}
+.valoracion button {
+  background-color: initial;
+  border: 0;
+  color: var(--color-inactivo);
+  transition: 1s all;
+}
+.valoracion button:hover {
+  cursor: pointer;
+}
+
+.estrellas:nth-child(1):hover {
+  color: var(--color-hover);
+  transform: rotate(360deg);
+}
+.estrellas:nth-child(2):hover  {
+  color: var(--color-hover);
+  transform: rotate(360deg);
+}
+.estrellas:nth-child(3):hover  {
+  color: var(--color-hover);
+  transform: rotate(360deg);
+}
+.estrellas:nth-child(4):hover {
+  color: var(--color-hover);
+  transform: rotate(-360deg);
+}
+.estrellas:nth-child(5):hover  {
+  color: var(--color-hover);
+  transform: rotate(-360deg);
+} */
+
+.valoracion button.seleccionado{
+  color: var(--color-hover);
+}
+
+.valoracion button.seleccionado .fa-star{
+  color:var(--color-hover);
+}

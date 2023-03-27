@@ -1,0 +1,15 @@
+.btn-card{
+    border-radius: 20px;
+	border: 1px solid #000000;
+	background-color: var(--colorCeleste);
+	color: var(--colorBlanco);
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+    margin-top: 5px;
+    margin-bottom: 20px;
+	cursor: pointer;
+}

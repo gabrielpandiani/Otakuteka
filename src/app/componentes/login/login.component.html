@@ -1,0 +1,58 @@
+<app-nav></app-nav>
+
+<section>
+    <div class="contenedor" id="contenedor">
+
+        <div class="Formulario login-container" *ngIf="oculto">
+            <form [formGroup]="loginForm" id="form-log" (ngSubmit)="loginSubmit()">
+                <h1>Login</h1>
+                <span>Ingrese sus credenciales</span>
+                <input type="text" placeholder="Usuario" formControlName="usuario" id="usuario">
+                    <div *ngIf="loginForm.controls['usuario'].invalid && (loginForm.controls['usuario'].dirty || loginForm.controls['usuario'].touched)">
+                        <p class="errorText" *ngIf="loginForm.controls['usuario'].errors?.['required']">Este campo debe estar completo</p>
+                    </div>
+                <input type="password" placeholder="Clave" formControlName="contrasenia" id="contrasenia">
+                    <div *ngIf="loginForm.controls['contrasenia'].invalid && (loginForm.controls['contrasenia'].dirty
+                    ||loginForm.controls['contrasenia'].touched)">
+                        <p class="errorText"> Este campo debe estar completo</p>
+                    </div>
+                <button id="boton-inicio">Login</button>
+            </form>
+        </div>
+
+        <div class="presentacion-contenedor">
+            <div class="presentacion">
+                <div class="presentacion-panel presentacion-a-la-izquierda">
+                    <h1>Bienvenidos a la Otakuteka</h1>
+                    <p>En esta web van a encontrar los ultimos estrenos de la temporada en emision y podran dejar
+                        reviews de los animes que ya vieron para recomendarselo a otros fans de este mundo</p>
+                    <button id="boton-registro" *ngIf="oculto" (click)="mostrar()">Ir a Registro</button>
+                    <button id="boton-login" *ngIf="!oculto" (click)="mostrar()">Volver al login</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="Formulario registro-contenedor" *ngIf="!oculto">
+            <form id="form-reg" [formGroup]="registerForm" (ngSubmit)="registerSubmit()">
+                <h1>Registro</h1>
+                <span>Realice el registro de sus datos</span>
+                <input type="text" placeholder="Usuario" id="usuario-registro" formControlName="regUsuario">
+                    <div *ngIf="registerForm.controls['regUsuario'].invalid && (registerForm.controls['regUsuario'].  dirty || registerForm.controls['regUsuario'].touched)">
+                        <p class="errorText" *ngIf="registerForm.controls['regUsuario'].errors?.['required']">* Este campo debe estar completo</p>
+                    </div>
+                <input type="mail" placeholder="Email" id="mail"formControlName="regMail">
+                    <div *ngIf="registerForm.controls['regMail'].invalid && (registerForm.controls['regMail'].dirty || registerForm.controls['regMail'].touched)">
+                        <p class="errorText" *ngIf="registerForm.controls['regMail'].errors?.['required']">* Este campo debe estar completo</p>
+                        <p class="errorText" *ngIf="registerForm.controls['regMail'].errors?.['email']"> Debes
+                            ingresar un email válido</p>
+                    </div>
+                <input type="password" placeholder="Clave" id="contrasenia-registro" formControlName="regContrasenia">
+                    <div *ngIf="registerForm.controls['regContrasenia'].invalid && (registerForm.controls['regContrasenia'].  dirty || registerForm.controls['regContrasenia'].touched)">
+                        <p class="errorText" *ngIf="registerForm.controls['regContrasenia'].errors?.['required']">* Este campo debe estar completo</p>
+                    </div>
+                <button id="Registro">Registrarse</button>
+            </form>
+        </div>
+
+    </div>
+</section>

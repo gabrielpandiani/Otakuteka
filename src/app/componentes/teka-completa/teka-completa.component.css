@@ -1,0 +1,162 @@
+.teka-completa{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+	background: linear-gradient(to bottom,var(--colorNaranja) ,var(--colorCeleste) );
+    justify-content: center;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    width: 19%;
+    margin: 2%;
+    display: inline-block;
+    border: 1px solid #000000;
+    border-radius: 30px;
+    height: fit-content;
+}
+.card:hover{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.imagen-card img{
+    width: 100%;
+    height: 400px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+
+}
+
+.texto-card{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 550px;
+}
+.texto-card h1 h2 p{
+    background: linear-gradient(to bottom, var(--colorNaranja),var(--colorCeleste));
+}
+
+.titulo-card{
+    font-size: 24px;
+    color: var(--colorBlanco);
+    text-shadow: 3px 3px #000000;
+}
+.genero-card{
+    font-size: 19px;
+}
+.sinopsis-card{
+    font-size: 16px;
+}
+i{
+  color: var(--color-hover);
+}
+
+.titulo-card,.genero-card,.sinopsis-card{
+    text-align: center;
+}
+
+
+
+.filtro{
+    display: none;
+}
+
+.cardContainer{
+    display: block;
+}
+
+/*Detalle mas info*/
+#detalle{
+    display:flex;
+	background: linear-gradient(to bottom, var(--colorNaranja),var(--colorCeleste));
+}
+
+#contenedorOculto{
+    display: flex;
+    align-items: flex-start;
+    margin-top: 8%;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-bottom: 3%;
+}
+#descripcion{
+    padding: 20px;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 20px;
+}
+
+#imagenDetalle{
+    display:flex;
+    align-items: center;
+    width: 30%;
+    height: 100%;
+    justify-content: center;
+    padding-right: 20px;
+}
+
+.animeImagen{
+    margin-top: 20px;
+    padding:20px;
+    width: 100%;
+}
+
+
+#descripcion h2{
+    font-size: 65px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#descripcion h3{
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#descripcion p{
+    font-size: 18px;
+}
+
+#volverTeka{
+    display: flex;
+    width: 150px;
+    height: 60px;
+    top: 30%;
+}
+#boton-volver{
+    position:absolute;
+    height: 70px;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+#volverTeka a{
+    font-size: 14px;
+}
+
+#volverTeka img{
+    width: 20px;
+    height: 20px;
+}
+
+#volverTeka{
+    border-radius: 20px;
+	border: 1px solid #000000;
+	background-color: var(--colorCeleste);
+	color: var(--colorBlanco);
+	font-weight: bold;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+    padding-top: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}

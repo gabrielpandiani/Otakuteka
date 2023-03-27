@@ -1,0 +1,33 @@
+<h3>Quieres que te contactemos? Dejanos tus datos y nos estaremos comunicando a la brevedad.</h3>
+
+<form #contactForm="ngForm" (ngSubmit)="submitForm(); contactForm.reset(); contactForm.invalid" >
+  <div class="form-group">
+    <label for="name">Nombre</label>
+    <input type="text" class="form-control" id="name" name="name" ngModel required #name="ngModel">
+    <div *ngIf="name.invalid && (name.dirty||name.touched)">
+      <div  class="error" *ngIf="name.errors?.['required']">Campo Vacio</div>
+    </div>
+    </div>
+
+  <div class="form-group">
+    <label for="contact">Número de contacto</label>
+    <input type="tel" class="form-control" id="contact" name="contact" ngModel required #contact="ngModel" pattern="[0-9]+">
+    <div *ngIf="contact.invalid && (contact.dirty||contact.touched)">
+      <div  class="error" *ngIf="contact.errors?.['required']">Campo Vacio</div>
+      <div  class="error" *ngIf="contact.errors?.['pattern']">Caracter Invalido</div>
+    </div>
+
+  </div>
+
+  <div class="form-group">
+    <label for="email">Correo electrónico</label>
+    <input type="email" class="form-control" id="email" name="email" ngModel required #email="ngModel" email>
+    <div *ngIf="email.invalid && (email.dirty||email.touched)">
+      <div class="error" *ngIf="email.errors?.['required']">Campo Vacio</div>
+      <div class="error" *ngIf="email.errors?.['email']">No es un mail</div>
+    </div>
+  </div>
+
+
+  <button type="submit" class="btn btn-primary" [disabled]="contactForm.invalid">Enviar</button>
+</form>
